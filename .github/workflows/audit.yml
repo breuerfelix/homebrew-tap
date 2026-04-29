@@ -1,0 +1,22 @@
+name: Audit Homebrew Tap
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  audit:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+
+      - name: Tap repository
+        run: brew tap breuerfelix/tap "$GITHUB_WORKSPACE"
+
+      - name: Audit casks
+        run: brew audit --cask --strict breuerfelix/tap/spurwechsel
