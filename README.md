@@ -20,10 +20,10 @@ brew install --cask breuerfelix/tap/spurwechsel
 
 ## Release Contract
 
-For the cask to work, the `breuerfelix/spurwechsel` repository must publish a GitHub release asset with this exact name:
+For the cask to work, the `breuerfelix/spurwechsel` repository must publish a GitHub release asset for each version using this naming scheme:
 
 ```text
-Spurwechsel.tar.gz
+spurwechsel-<version>-macos-arm64.zip
 ```
 
 The archive must contain this app bundle at its root:
@@ -32,17 +32,17 @@ The archive must contain this app bundle at its root:
 Spurwechsel.app
 ```
 
-The cask uses the stable GitHub Releases URL below, so the asset must be attached to each release, not just uploaded as a GitHub Actions workflow artifact:
+The cask uses a versioned GitHub Releases URL, so the asset must be attached to each release, not just uploaded as a GitHub Actions workflow artifact:
 
 ```text
-https://github.com/breuerfelix/spurwechsel/releases/latest/download/Spurwechsel.tar.gz
+https://github.com/breuerfelix/spurwechsel/releases/download/v<version>/spurwechsel-<version>-macos-arm64.zip
 ```
 
 ## Important Notes
 
 - Homebrew cannot install from private GitHub release assets without additional authenticated distribution infrastructure. To make `brew install breuerfelix/tap/spurwechsel` work on other machines, the release asset must be publicly downloadable.
-- GitHub-hosted zip release assets are rejected by Homebrew's cask style checks. Using `Spurwechsel.tar.gz` avoids that policy problem.
-- Because this cask tracks `latest`, upgrades may require `brew upgrade --cask --greedy spurwechsel`.
+- The cask must be updated for each release with the new `version` and `sha256` values.
+- With a versioned cask, users can upgrade with plain `brew upgrade`.
 
 ## Local Validation
 

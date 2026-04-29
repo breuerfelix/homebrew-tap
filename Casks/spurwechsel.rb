@@ -1,10 +1,10 @@
 cask "spurwechsel" do
-  version :latest
-  sha256 :no_check
+  version "0.1.0"
+  sha256 "REPLACE_WITH_RELEASE_SHA256"
 
-  url "https://github.com/breuerfelix/spurwechsel/releases/latest/download/Spurwechsel.tar.gz"
+  url "https://github.com/breuerfelix/spurwechsel/releases/download/v#{version}/spurwechsel-#{version}-macos-arm64.zip"
   name "Spurwechsel"
-  desc "Personal utility application"
+  desc "Human Context Switcher"
   homepage "https://github.com/breuerfelix/spurwechsel"
 
   auto_updates true
