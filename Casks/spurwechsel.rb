@@ -7,8 +7,6 @@ cask "spurwechsel" do
   desc "Human Context Switcher"
   homepage "https://github.com/breuerfelix/spurwechsel"
 
-  auto_updates true
-
   app "Spurwechsel.app"
   binary "#{appdir}/Spurwechsel.app/Contents/Resources/spurwechsel-cli.sh", target: "spurwechsel"
   binary "#{appdir}/Spurwechsel.app/Contents/Resources/spurwechsel-cli.sh", target: "spur"
