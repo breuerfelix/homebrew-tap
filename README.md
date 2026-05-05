@@ -17,6 +17,22 @@ brew install --cask breuerfelix/tap/spurwechsel
 ## Repository Layout
 
 - `Casks/spurwechsel.rb` installs the macOS app bundle from GitHub Releases.
+- `Casks/spurwechsel.rb` also links bundled CLI script to `spurwechsel` and `spur`.
+
+## CLI Commands
+
+After install, both commands are available in shell:
+
+```sh
+spurwechsel .
+spur .
+```
+
+Both commands point to same bundled app resource script:
+
+```text
+#{appdir}/Spurwechsel.app/Contents/Resources/spurwechsel-cli.sh
+```
 
 ## Release Contract
 
