@@ -16,7 +16,10 @@ jobs:
         uses: Homebrew/actions/setup-homebrew@master
 
       - name: Tap repository
-        run: brew tap breuerfelix/tap "$GITHUB_WORKSPACE"
+        run: |
+          TAP_PATH="$(brew --repo)/Library/Taps/breuerfelix/homebrew-tap"
+          mkdir -p "$(dirname "$TAP_PATH")"
+          ln -s "$GITHUB_WORKSPACE" "$TAP_PATH"
 
       - name: Audit casks
         run: brew audit --cask --strict breuerfelix/tap/spurwechsel
