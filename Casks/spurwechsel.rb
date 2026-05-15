@@ -1,6 +1,6 @@
 cask "spurwechsel" do
-  version "0.6.0"
-  sha256 "875949179d368f0408ab5246fa414fa63105657d7e85cbed9366afdfe50b148b"
+  version "0.7.0"
+  sha256 "99e8ba1f088eb69df2bb5314d5dc52182baba364016fa8acce31f446cfdcf1e7"
 
   url "https://github.com/breuerfelix/spurwechsel/releases/download/v#{version}/spurwechsel-#{version}-macos-arm64.zip"
   name "Spurwechsel"
